@@ -1,9 +1,10 @@
 const dotenv = require("dotenv");
+dotenv.config({ path: './.env.local' });
+
 const express = require("express");
 const app = express();
 const cookieParser = require('cookie-parser');
 
-dotenv.config({ path: './config.env' });
 require('./db/conn');
 
 //read json file
