@@ -2,10 +2,13 @@ const jwt = require("jsonwebtoken");
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const cors = require("cors");
 const Authenticate = require("../middleware/adminAuth");
 
 require("../db/conn");
 const Admin = require("../model/adminSchema");
+
+router.use(cors());
 
 router.get("/", (req, res) => {
   res.send("This is Home page by router");
@@ -13,32 +16,32 @@ router.get("/", (req, res) => {
 
 // Signin up API
 
-router.post("/Signup", async (req, res) => {
+router.post("/signup", async (req, res) => {
   const { name, email, number, password, cpassword } = req.body;
 
-  if (!name | !email | !number | !password | !cpassword) {
-    return res.status(422).json({ error: "Plase Fill the all Fillde" });
+  if (!name || !email || !number || !password || !cpassword) {
+    return res.status(422).json({ error: "Please fill in all fields" });
   }
 
   try {
-    const AdminExist = await Admin.findOne({ email: email });
+    const adminExist = await Admin.findOne({ email: email });
 
-    if (AdminExist) {
-      return res.status(422).json({ error: "Email Already Exist" });
-    } else if (password != cpassword) {
-      return res.status(422).json({ error: "Password not match" });
+    if (adminExist) {
+      return res.status(422).json({ error: "Email Already Exists" });
+    } else if (password !== cpassword) {
+      return res.status(422).json({ error: "Passwords do not match" });
     } else {
-      const Admin = new Admin({ name, email, number, password, cpassword });
+      const newAdmin = new Admin({ name, email, number, password, cpassword });
 
-      await Admin.save();
+      await newAdmin.save();
 
-      res.status(201).json({ message: "Registered Successfuly" });
+      res.status(201).json({ message: "Registration Successful" });
     }
   } catch (err) {
     console.log(err);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
 
 // Signin API
 
@@ -84,12 +87,16 @@ router.get("/dashbord", Authenticate, (req, res) => {
   res.send(req.rootAdmin);
 });
 
-
-//logout
-router.get("/logout", (req, res) => {
-  console.log("Hello my logout Page");
-  res.clearCookie("jwtokan", { path: "/" });
-  res.status(200).send("Admin Logout");
+// Logout API
+router.get("/logout", async (req, res) => {
+  try {
+    res.clearCookie("jwtokan", { path: "/" });
+    res.clearCookie("adminToken", { path: "/" });
+    res.status(200).send("User Logout");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Server Error" });
+  }
 });
 
 module.exports = router;

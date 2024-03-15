@@ -31,11 +31,9 @@ const adminSchema = new mongoose.Schema({
             }
         }
     ]
-})
-
+});
 
 //Password Hashing
-
 adminSchema.pre('save', async function (next) {
     console.log("Hii Pranav");
     if(this.isModified('password')){
@@ -45,21 +43,18 @@ adminSchema.pre('save', async function (next) {
     next();
 });
 
-// Toakan generating 
-
+// Toakan generating
 adminSchema.methods.generateAuthToken = async function () {
     try{
         let tokan = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
         this.tokans = this.tokans.concat({ tokan: tokan});
         await this.save();
         return tokan;
-    }catch (err){
+    } catch (err){
         console.log(err);
     }
-
 }
 
-
-const Admin = mongoose.model('Admin', adminSchema);
+const Admin = mongoose.model('ADMIN', adminSchema);
 
 module.exports = Admin;
