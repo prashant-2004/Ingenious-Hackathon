@@ -1,10 +1,9 @@
 import "./App.css";
-import AdminLogin from "./Pages/admin/login";
 
 function App() {
   return (
     <>
-      <AdminLogin />
+      <h1 className="text-center mt-4">Log in</h1>
     </>
   );
 }

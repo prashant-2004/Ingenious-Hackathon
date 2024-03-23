@@ -15,6 +15,7 @@ app.use(cookieParser());
 
 // Rout Link
 app.use(require('./route/adminRoute'));
+app.use(require('./route/userRoute'));
 
 const PORT = process.env.PORT;
 

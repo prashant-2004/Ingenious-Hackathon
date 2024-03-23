@@ -5,7 +5,7 @@ function Signup() {
 
   const navigate = useNavigate();
 
-  const [admin, setAdmin] = useState({
+  const [user, setUser] = useState({
     name:"", email: "", number: "", work:"", password: "", cpassword: ""
   });
 
@@ -15,15 +15,15 @@ function Signup() {
       name = e.target.name;
       value = e.target.value;
 
-      setAdmin({ ...admin, [name]:value});
+      setUser({ ...user, [name]:value});
   }
 
   const postData = async (e) =>{
     e.preventDefault();
 
-    const { name, email, number, work, password, cpassword } = admin;
+    const { name, email, number, work, password, cpassword } = user;
 
-    const resp = await fetch("http://localhost:8000/admin-signup", {
+    const resp = await fetch("http://localhost:8000/user-signup", {
       method: "POST",
       headers: {
         "Content-Type" : "application/json"
@@ -50,7 +50,7 @@ function Signup() {
 
   return (
     <>
-      <h1 className="text-center mt-4">Admin Sign Up</h1>
+      <h1 className="text-center mt-4">User Sign Up</h1>
 
       <div className="container">
         <form method="POST">
@@ -61,7 +61,7 @@ function Signup() {
               name="name"
               className="form-control"
               id="exampleInputName"
-              value={admin.name}
+              value={user.name}
               onChange={handleInputs}
               placeholder="Your Name"
             />
@@ -75,7 +75,7 @@ function Signup() {
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              value={admin.email}
+              value={user.email}
               onChange={handleInputs}
               placeholder="Enter email"
             />
@@ -90,7 +90,7 @@ function Signup() {
               name="number"
               className="form-control"
               id="exampleInputPhone"
-              value={admin.number}
+              value={user.number}
               onChange={handleInputs}
               placeholder="phone"
             />
@@ -102,7 +102,7 @@ function Signup() {
               name="work"
               className="form-control"
               id="exampleInputProfession"
-              value={admin.work}
+              value={user.work}
               onChange={handleInputs}
               placeholder="Your Profession"
             />
@@ -114,7 +114,7 @@ function Signup() {
               className="form-control"
               name="password"
               id="exampleInputPassword"
-              value={admin.password}
+              value={user.password}
               onChange={handleInputs}
               placeholder="Password"
             />
@@ -126,7 +126,7 @@ function Signup() {
               name="cpassword"
               className="form-control"
               id="exampleInputCPassword"
-              value={admin.cpassword}
+              value={user.cpassword}
               onChange={handleInputs}
               placeholder="Password"
             />

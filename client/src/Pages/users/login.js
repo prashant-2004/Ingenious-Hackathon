@@ -7,10 +7,10 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginAdmin = async (e) => {
+  const loginUser = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:8000/admin-signin", {
+    const res = await fetch("http://localhost:8000/user-signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function Login() {
 
   return (
     <div>
-      <h1 className="text-center mt-4">Admin Log in</h1>
+      <h1 className="text-center mt-4">User Log in</h1>
 
       <div className="container">
         <form method="POST">
@@ -71,7 +71,7 @@ function Login() {
 
           <div className="text-center">
             <button
-              onClick={loginAdmin}
+              onClick={loginUser}
               type="submit"
               className="btn btn-primary  m-4"
             >

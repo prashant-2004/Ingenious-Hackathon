@@ -3,10 +3,10 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const cors = require("cors");
-const Authenticate = require("../middleware/adminAuth");
+const Authenticate = require("../middleware/userAuth");
 
 require("../db/conn");
-const Admin = require("../model/adminSchema");
+const User = require("../model/userSchema");
 
 router.use(cors());
 
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 
 // Signin up API
 
-router.post("/admin-signup", async (req, res) => {
+router.post("/user-signup", async (req, res) => {
   const { name, email, number, password, cpassword } = req.body;
 
   if (!name || !email || !number || !password || !cpassword) {
@@ -24,16 +24,16 @@ router.post("/admin-signup", async (req, res) => {
   }
 
   try {
-    const adminExist = await Admin.findOne({ email: email });
+    const userExist = await User.findOne({ email: email });
 
-    if (adminExist) {
+    if (userExist) {
       return res.status(422).json({ error: "Email Already Exists" });
     } else if (password !== cpassword) {
       return res.status(422).json({ error: "Passwords do not match" });
     } else {
-      const newAdmin = new Admin({ name, email, number, password, cpassword });
+      const newUser = new User({ name, email, number, password, cpassword });
 
-      await newAdmin.save();
+      await newUser.save();
 
       res.status(201).json({ message: "Registration Successful" });
     }
@@ -45,7 +45,7 @@ router.post("/admin-signup", async (req, res) => {
 
 // Signin API
 
-router.post("/admin-signin", async (req, res) => {
+router.post("/user-signin", async (req, res) => {
   try {
     let tokan;
     const { email, password } = req.body;
@@ -54,25 +54,25 @@ router.post("/admin-signin", async (req, res) => {
       return res.status(400).json({ error: "Plase Fill the all Fillde" });
     }
 
-    const AdminLogin = await Admin.findOne({ email: email });
+    const UserLogin = await User.findOne({ email: email });
 
-    if (AdminLogin) {
-      const AdminPassword = await bcrypt.compare(password, AdminLogin.password);
+    if (UserLogin) {
+      const UserPassword = await bcrypt.compare(password, UserLogin.password);
 
       // JWT tokan
-      tokan = await AdminLogin.generateAuthToken();
+      tokan = await UserLogin.generateAuthToken();
       console.log(tokan);
 
       // store tokan in cookies
-      res.cookie("adminTokan", tokan, {
+      res.cookie("userTokan", tokan, {
         expires: new Date(Date.now() + 25892000000),
         httpOnly: true,
       });
 
-      if (!AdminPassword) {
+      if (!UserPassword) {
         res.status(400).json({ error: "inviald Credentials" });
       } else {
-        res.json({ error: "Admin Signin Successfuly" });
+        res.json({ error: "User Signin Successfuly" });
       }
     } else {
       res.status(400).json({ error: "inviald Credentials" });
@@ -82,16 +82,18 @@ router.post("/admin-signin", async (req, res) => {
   }
 });
 
-router.get("/admin-dashbord", Authenticate, (req, res) => {
+router.get("/user-dashbord", Authenticate, (req, res) => {
   console.log("This is home page");
-  res.send(req.rootAdmin);
+  res.send(req.rootUser);
 });
 
+
+
 // Logout API
-router.get("/admin-logout", async (req, res) => {
+router.get("/user-logout", async (req, res) => {
   try {
     res.clearCookie("jwtokan", { path: "/" });
-    res.clearCookie("adminToken", { path: "/" });
+    res.clearCookie("userToken", { path: "/" });
     res.status(200).send("User Logout");
   } catch (err) {
     console.log(err);
