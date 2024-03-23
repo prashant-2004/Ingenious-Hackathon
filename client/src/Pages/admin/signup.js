@@ -1,5 +1,6 @@
 import React,{ useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import "../../style/admin/signup.css";
 
 function Signup() {
 
@@ -49,7 +50,7 @@ function Signup() {
   }
 
   return (
-    <>
+    <div className="admin-signup">
       <h1 className="text-center mt-4">Admin Sign Up</h1>
 
       <div className="container">
@@ -139,7 +140,7 @@ function Signup() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

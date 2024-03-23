@@ -1,0 +1,8 @@
+.admin-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(180deg, #000814 0%, #011a3f 100%);
+  color: white;
+}
