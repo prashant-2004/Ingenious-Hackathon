@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "../../style/admin/login.css";
 
 function Login() {
   const navigate = useNavigate();
@@ -40,13 +41,19 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1 className="text-center mt-4">Admin Log in</h1>
-
-      <div className="container">
+    <div className="admin-login">
+      <h1 className="text-center mt-4 admin-login-title">
+        Log in to your account
+      </h1>
+      <h5 className="admin-login-subtitle">
+        Welcome back! Please enter your details.
+      </h5>
+      <div className="container admin-login-from">
         <form method="POST">
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
+            <label htmlFor="exampleInputEmail1">
+              Email address <span className="required">*</span>
+            </label>
             <input
               type="email"
               className="form-control"
@@ -58,7 +65,9 @@ function Login() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Password</label>
+            <label htmlFor="exampleInputPassword1">
+              Password <span className="required">*</span>
+            </label>
             <input
               type="password"
               className="form-control"
@@ -73,10 +82,17 @@ function Login() {
             <button
               onClick={loginAdmin}
               type="submit"
-              className="btn btn-primary  m-4"
+              className="btn btn-primary m-4 admin-login-button"
             >
-              Login
+              Sign
             </button>
+
+            <h5 className="admin-login-subtitle mt-5">
+              Don’t have an account?
+              <span>
+                <Link className="signup-link" to={"/admin-signup"}> Sign up</Link>
+              </span>
+            </h5>
           </div>
         </form>
       </div>

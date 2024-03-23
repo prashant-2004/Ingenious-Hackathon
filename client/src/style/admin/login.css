@@ -1,0 +1,72 @@
+.admin-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(180deg, #000814 0%, #011a3f 100%);
+  color: white;
+}
+
+.admin-login-title {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 2.4rem;
+}
+
+.admin-login-subtitle {
+  color: #9a9eac;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 1.2rem;
+  margin-bottom: 3%;
+}
+
+.admin-login-from {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #333844;
+  background: #242837;
+  color: #fff;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  width: 40rem;
+  display: flex;
+  padding: 10px 14px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+
+.required {
+  color: #ff4d4f;
+}
+
+.admin-login-button {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(89deg, #5256e6 0.68%, #53a0ea 100%);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  padding: 10px 18px;
+  width: 100%;
+  margin-left: 0% !important;
+}
+
+.signup-link {
+  color: #fff;
+    text-decoration: none;
+}
