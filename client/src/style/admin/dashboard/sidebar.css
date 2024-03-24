@@ -55,3 +55,13 @@
   align-items: center;
   gap: 10px;
 }
+
+.nav-logout {
+  border-top: 2px solid #dae3f8;
+  display: flex;
+  width: 100%;
+  padding: 12px 24px;
+  align-items: center;
+  gap: 10px;
+  color: #E53761;
+}
