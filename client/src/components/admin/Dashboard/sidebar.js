@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import "../../../style/admin/dashboard/sidebar.css";
 import AppointmentIcon from "../../../assets/admin/Appointment.svg";
 import ServiceIcon from "../../../assets/admin/Service.svg";
@@ -64,9 +65,25 @@ function Sidebar() {
     { name: "Goals", icon: <img alt="Goals" src={GoalsIcon} /> },
   ];
 
-  const handelLogout = () => {
-    localStorage.removeItem("first_session");
-    window.location.href = "/login";
+  const handleLogout = async () => {
+    try {
+      const res = await axios.get("http://localhost:8000/admin-logout", {
+        headers: {
+          Accept: "application/json",
+          "Content-type": "application/json",
+        },
+        withCredentials: true,
+      });
+  
+      if (res.status === 200) {
+        window.location.href = "/admin-login";
+      } else {
+        const error = new Error("Failed to logout");
+        throw error;
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -87,7 +104,7 @@ function Sidebar() {
           </div>
         ))}
       </div>
-      <div className="nav-logout" onClick={handelLogout}>
+      <div className="nav-logout" onClick={handleLogout}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

@@ -4,7 +4,6 @@ import "../../style/admin/login.css";
 
 function Login() {
   const navigate = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -29,14 +28,10 @@ function Login() {
     if (res.status === 400 || !data) {
       window.alert("Invalid Credentials");
       console.log("Invalid Credentials");
-    } else if (res.status === 404) {
-      window.alert("Network Error");
-      console.log("Network Error");
     } else {
       window.alert("Login Successful");
       console.log("Login Successful");
-
-      navigate("/dashboard");
+      navigate("/admin-dashboard");
     }
   };
 
@@ -90,7 +85,10 @@ function Login() {
             <h5 className="admin-login-subtitle mt-5">
               Don’t have an account?
               <span>
-                <Link className="signup-link" to={"/admin-signup"}> Sign up</Link>
+                <Link className="signup-link" to={"/admin-signup"}>
+                  {" "}
+                  Sign up
+                </Link>
               </span>
             </h5>
           </div>

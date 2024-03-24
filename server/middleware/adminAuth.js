@@ -1,30 +1,31 @@
+// middleware/adminAuth.js
+
 const jwt = require("jsonwebtoken");
-const User = require("../model/adminSchema");
+const Admin = require("../model/adminSchema");
 
-const adminAuthenticate = async (req, res, next) => {
-
-    try{
-
-        const tokan = req.cookies.adminTokan;
-        const verifyToken = jwt.verify(tokan, process.env.SECRET_KEY);
-
-        const rootUser = await User.findOne({ _id: verifyToken._id, "tokens.token": tokan});
-
-        if (!rootUser) {
-            throw new Error('User not Found')
-        }
-
-        req.tokan = tokan;
-        req.rootUser = rootUser;
-        req.userID = rootUser._id;
-
-        next();
-
-    } catch (err){
-        res.status(401).send('Unauthorized: No token provided');
-        console.log(err)
+const Authenticate = async (req, res, next) => {
+  try {
+    const token = req.cookies.adminToken;
+    if (!token) {
+      throw new Error("No token, authorization denied");
     }
 
-}
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    const admin = await Admin.findOne({
+      _id: decoded._id,
+      "tokans.tokan": token,
+    });
 
-module.exports = adminAuthenticate;
+    if (!admin) {
+      throw new Error();
+    }
+
+    req.token = token;
+    req.rootAdmin = admin;
+    next();
+  } catch (error) {
+    res.status(401).json({ error: "Please authenticate as admin" });
+  }
+};
+
+module.exports = Authenticate;

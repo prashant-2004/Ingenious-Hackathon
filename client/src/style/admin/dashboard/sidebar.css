@@ -57,11 +57,19 @@
 }
 
 .nav-logout {
-  border-top: 2px solid #dae3f8;
   display: flex;
   width: 100%;
   padding: 12px 24px;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   color: #E53761;
+  position: absolute;
+  bottom: 1rem;
+  left: 0rem;
+  cursor: pointer;
+}
+
+.nav-logout:hover {
+  background-color: white;
 }

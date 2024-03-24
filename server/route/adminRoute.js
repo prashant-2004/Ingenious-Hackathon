@@ -8,7 +8,12 @@ const Authenticate = require("../middleware/adminAuth");
 require("../db/conn");
 const Admin = require("../model/adminSchema");
 
-router.use(cors());
+router.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 router.get("/", (req, res) => {
   res.send("This is Home page by router");
@@ -44,45 +49,45 @@ router.post("/admin-signup", async (req, res) => {
 });
 
 // Signin API
-
 router.post("/admin-signin", async (req, res) => {
   try {
-    let tokan;
+    let token;
     const { email, password } = req.body;
 
     if (!email || !password) {
-      return res.status(400).json({ error: "Plase Fill the all Fillde" });
+      return res.status(400).json({ error: "Please fill in all fields" });
     }
 
-    const AdminLogin = await Admin.findOne({ email: email });
+    const adminLogin = await Admin.findOne({ email: email });
 
-    if (AdminLogin) {
-      const AdminPassword = await bcrypt.compare(password, AdminLogin.password);
+    if (adminLogin) {
+      const adminPassword = await bcrypt.compare(password, adminLogin.password);
 
-      // JWT tokan
-      tokan = await AdminLogin.generateAuthToken();
-      console.log(tokan);
+      if (!adminPassword) {
+        return res.status(400).json({ error: "Invalid Credentials" });
+      }
 
-      // store tokan in cookies
-      res.cookie("adminTokan", tokan, {
+      // JWT token
+      token = await adminLogin.generateAuthToken();
+      console.log("Admin token: " + token);
+
+      // store token in cookies
+      res.cookie("adminToken", token, {
         expires: new Date(Date.now() + 25892000000),
         httpOnly: true,
       });
 
-      if (!AdminPassword) {
-        res.status(400).json({ error: "inviald Credentials" });
-      } else {
-        res.json({ error: "Admin Signin Successfuly" });
-      }
+      res.json({ message: "Admin Signin Successful" });
     } else {
-      res.status(400).json({ error: "inviald Credentials" });
+      res.status(400).json({ error: "Invalid Credentials" });
     }
   } catch (err) {
     console.log(err);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
-router.get("/admin-dashbord", Authenticate, (req, res) => {
+router.get("/admin-dashboard", Authenticate, (req, res) => {
   console.log("This is home page");
   res.send(req.rootAdmin);
 });
