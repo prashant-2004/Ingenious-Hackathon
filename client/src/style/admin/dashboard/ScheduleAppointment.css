@@ -64,6 +64,56 @@
   border-bottom: 1px solid #dae3f8;
 }
 
+.Action-select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.Action-select option {
+  padding: 0.5rem;
+}
+
+.appointment-status {
+  font-weight: 700;
+}
+
+.yes-action-btn {
+  color: var(--Success-success-600, #27a468);
+  border-radius: 0.5rem;
+  border: 1px solid var(--Success-success-100, #bde8d3);
+  background: var(--Success-success-50, #eaf8f1);
+
+  width: 5rem;
+  height: 2rem;
+  padding: auto;
+  text-align: center;
+  margin-right: 3%;
+  margin-top: 3%;
+}
+
+.yes-action-btn:hover {
+  background: var(--Success-success-50, #27a468);
+  color: var(--Success-success-600, #eaf8f1);
+}
+
+.no-action-btn {
+  color: var(--Error-error-600, #d03258);
+  border-radius: 0.5rem;
+  border: 1px solid var(--Error-error-100, #f7c1ce);
+  background: var(--Error-error-50, #fcebef);
+
+  width: 5rem;
+  height: 2rem;
+  padding: auto;
+  text-align: center;
+}
+
+.no-action-btn:hover {
+  background: var(--Success-success-50, #d03258);
+  color: var(--Success-success-600, #eaf8f1);
+}
+
 @media screen and (max-width: 992px) {
   .Schedule-Appointment-table-thead,
   .Schedule-Appointment-table-tbody {
