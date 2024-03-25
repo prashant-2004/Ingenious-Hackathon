@@ -2,6 +2,7 @@ import React from "react";
 import AdminSidebar from "../../components/admin/Dashboard/sidebar";
 import AdminCards from "../../components/admin/Dashboard/cards";
 import Chart from "../../components/admin/Dashboard/chart";
+import ScheduleAppointment from "../../components/admin/Dashboard/ScheduleAppointment";
 
 function dashboard() {
   return (
@@ -11,6 +12,7 @@ function dashboard() {
         <AdminCards />
         <Chart />
       </div>
+      <ScheduleAppointment />
     </div>
   );
 }

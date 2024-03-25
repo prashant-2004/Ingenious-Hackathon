@@ -1,0 +1,85 @@
+.Schedule-Appointment {
+  margin: 2rem 1rem;
+  margin-right: 2rem;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  border-radius: var(--Border-Radius-Md, 1rem);
+  border: 1px solid var(--Primary-Primary-850, #dae3f8);
+  background: var(--White, #fefefe);
+}
+
+.Schedule-Appointment h6 {
+  color: var(--Primary-Primary-50, #0b1c33);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 1.25rem;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Schedule-Appointment-table {
+  margin-top: 1.5rem;
+  padding: 2rem !important;
+  width: 100%;
+}
+
+.Schedule-Appointment-table-thead {
+  border-radius: 1.15438rem 0rem 0rem 0rem;
+  background: #f2f5fa;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  height: 2.75rem;
+  width: 100%;
+  padding: 0.625rem;
+}
+
+.Schedule-Appointment-table-thead th {
+  padding: 1rem;
+  text-align: center !important;
+}
+
+.Schedule-Appointment-table-tbody {
+  text-align: center;
+}
+
+.Schedule-Appointment-table-tbody td {
+  padding: 2% !important;
+  border-bottom: 1px solid #dae3f8;
+}
+
+
+@media screen and (max-width: 992px) {
+  .Schedule-Appointment-table-thead,
+  .Schedule-Appointment-table-tbody {
+    display: block;
+  }
+
+  .Schedule-Appointment-table-thead th {
+    display: block;
+    text-align: right;
+  }
+
+  .Schedule-Appointment-table-tbody td {
+    display: block;
+    text-align: right;
+  }
+
+  .Schedule-Appointment-table-thead th::before,
+  .Schedule-Appointment-table-tbody td::before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

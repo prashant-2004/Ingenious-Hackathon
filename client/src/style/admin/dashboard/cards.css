@@ -1,7 +1,7 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   gap: 1rem;
 }
 
@@ -10,7 +10,7 @@
   border: 0.924px solid #a7a7a7;
   background: #fff;
   padding: 2%;
-  width: 10rem;
+  width: 11rem;
   height: auto;
   flex-shrink: 0;
   display: flex;
