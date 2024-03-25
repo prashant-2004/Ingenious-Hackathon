@@ -51,7 +51,7 @@ function ChartComponent() {
 
   return (
     <div className="chart-box">
-      <canvas ref={chartRef} style={{width: "35rem", height: "25rem", padding: "3% 3%"}}></canvas>
+      <canvas ref={chartRef} style={{width: "35rem", height: "26rem", padding: "3% 3%"}}></canvas>
     </div>
   );
 }
