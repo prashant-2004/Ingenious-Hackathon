@@ -1,0 +1,29 @@
+.Search-Bar-section {
+  width: 100%;
+  border-radius: 1.1545rem;
+  border: 0.924px solid var(--Stroke-Color, #a7a7a7);
+  background: #fff;
+  margin: 2% 0%;
+  padding: 1%;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.Search-Bar {
+  width: 70%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--Primary-Primary-850, #dae3f8);
+
+  display: flex;
+  height: 2rem;
+  padding: 1.5rem;
+  padding-left: 3rem;
+  margin-left: -1rem;
+}
+
+.search-icon {
+    position: relative;
+    left: 1rem;
+}

@@ -67,7 +67,7 @@ function Sidebar() {
     {
       name: "Service",
       icon: <img alt="Service" src={ServiceIcon} />,
-      to: "/admin-service",
+      to: "/admin-services",
     },
     {
       name: "Goals",

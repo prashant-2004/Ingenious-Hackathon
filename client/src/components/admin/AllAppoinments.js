@@ -81,9 +81,23 @@ function AllAppointments() {
                   <td>
                     {selectedAppointment === appointment.id ? (
                       <div className="action-btns">
-                        Confirm <span className="appointment-status">{selectedAction}</span> this appointment? <br />
-                        <button className="yes-action-btn" onClick={() => handleConfirm(true)}>Yes</button>
-                        <button className="no-action-btn" onClick={() => handleConfirm(false)}>No</button>
+                        Confirm{" "}
+                        <span className="appointment-status">
+                          {selectedAction}
+                        </span>{" "}
+                        this appointment? <br />
+                        <button
+                          className="yes-action-btn"
+                          onClick={() => handleConfirm(true)}
+                        >
+                          Yes
+                        </button>
+                        <button
+                          className="no-action-btn"
+                          onClick={() => handleConfirm(false)}
+                        >
+                          No
+                        </button>
                       </div>
                     ) : appointment.status === "Pending" ? (
                       <select
