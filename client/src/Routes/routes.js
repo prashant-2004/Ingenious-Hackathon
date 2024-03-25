@@ -4,6 +4,7 @@ import App from '../App';
 import AdminLogin from '../Pages/admin/login';
 import AdminSignup from '../Pages/admin/signup';
 import Dashboard from '../Pages/admin/dashboard';
+import Appointments from '../Pages/admin/appointments';
 
 
 import UserLogin from '../Pages/users/login';
@@ -16,6 +17,7 @@ function Routess() {
         <Route path='/admin-login' element={<AdminLogin />}/>
         <Route path='/admin-signup' element={<AdminSignup />}/>
         <Route path='/admin-dashboard' element={<Dashboard />}/>
+        <Route path='/admin-appointments' element={<Appointments />}/>
 
 
         <Route path='/login' element={<UserLogin />}/>

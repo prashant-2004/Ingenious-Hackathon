@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import axios from 'axios';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 import "../../../style/admin/dashboard/sidebar.css";
 import AppointmentIcon from "../../../assets/admin/Appointment.svg";
 import ServiceIcon from "../../../assets/admin/Service.svg";
 import GoalsIcon from "../../../assets/admin/Goal.svg";
 
 function Sidebar() {
-  const [activeLink, setActiveLink] = useState(0);
+  const location = useLocation();
 
   const navLinks = [
     {
@@ -56,13 +57,23 @@ function Sidebar() {
           </defs>
         </svg>
       ),
+      to: "/admin-dashboard",
     },
     {
       name: "Appointment",
       icon: <img alt="Appointment" src={AppointmentIcon} />,
+      to: "/admin-appointments",
     },
-    { name: "Service", icon: <img alt="Service" src={ServiceIcon} /> },
-    { name: "Goals", icon: <img alt="Goals" src={GoalsIcon} /> },
+    {
+      name: "Service",
+      icon: <img alt="Service" src={ServiceIcon} />,
+      to: "/admin-service",
+    },
+    {
+      name: "Goals",
+      icon: <img alt="Goals" src={GoalsIcon} />,
+      to: "/admin-goals",
+    },
   ];
 
   const handleLogout = async () => {
@@ -74,7 +85,7 @@ function Sidebar() {
         },
         withCredentials: true,
       });
-  
+
       if (res.status === 200) {
         window.location.href = "/admin-login";
       } else {
@@ -95,12 +106,13 @@ function Sidebar() {
       <div className="nav-links">
         {navLinks.map((link, index) => (
           <div
-            className={`nav-link ${index === activeLink ? "active" : ""}`}
-            onClick={() => setActiveLink(index)}
+            className={`nav-link ${location.pathname === link.to ? "active" : ""}`}
             key={index}
           >
-            {link.icon}
-            {link.name}
+            <Link className="navbar-links" to={link.to}>
+              {link.icon}
+              {link.name}
+            </Link>
           </div>
         ))}
       </div>
