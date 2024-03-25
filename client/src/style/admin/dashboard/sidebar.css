@@ -1,7 +1,7 @@
 .sidebar {
   position: fixed;
   height: 100vh;
-  width: 40vh;
+  width: 33vh;
   padding: 1% 2%;
   color: white;
   border-right: 1px solid var(--Primary-Primary-850, #dae3f8);

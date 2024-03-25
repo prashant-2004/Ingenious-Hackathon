@@ -1,0 +1,41 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  border-radius: 18.472px;
+  border: 0.924px solid #a7a7a7;
+  background: #fff;
+  padding: 2%;
+  width: 10rem;
+  height: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.card-title {
+  color: var(--Base-Shade-70, rgba(0, 0, 0, 0.7));
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 1rem;
+}
+
+.card-value {
+  color: var(--Base-Shade-100, #000);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 2rem;
+  margin-top: -10%;
+  margin-bottom: -10%;
+}
