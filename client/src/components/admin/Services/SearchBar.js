@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../style/admin/services/SearchBar.css";
 
 function SearchBar() {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <div className="Search-Bar-section">
       <svg
@@ -35,6 +41,22 @@ function SearchBar() {
         </defs>
       </svg>
       <input placeholder="Search" className="Search-Bar" />
+
+      <button className="Add-Service" onClick={toggleModal}>
+        Add Service
+      </button>
+
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={toggleModal}>
+              &times;
+            </span>
+            <h5>Service add form</h5>
+            <p>Please fill the form and upload the file</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
