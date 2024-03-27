@@ -1,6 +1,7 @@
 import React from "react";
 import AdminSidebar from "../../components/admin/Dashboard/sidebar";
 import SearchBar from "../../components/admin/Services/SearchBar";
+import ServicesCard from "../../components/admin/Services/servicesCard";
 
 function services() {
   return (
@@ -21,6 +22,7 @@ function services() {
         }}
       >
         <SearchBar />
+        <ServicesCard />
       </div>
     </div>
   );

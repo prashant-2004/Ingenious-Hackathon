@@ -1,9 +1,10 @@
 import "./App.css";
+import Header from "./components/users/home/header";
 
 function App() {
   return (
     <>
-      <h1 className="text-center mt-4">Log in</h1>
+      <Header />
     </>
   );
 }

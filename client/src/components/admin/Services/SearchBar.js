@@ -54,6 +54,43 @@ function SearchBar() {
             </span>
             <h5>Service add form</h5>
             <p>Please fill the form and upload the file</p>
+
+            <form className="add-service-form">
+              <div style={{ display: "flex", gap: "1rem" }}>
+                <input
+                  className="service-name-input"
+                  id="service-input"
+                  type="text"
+                  placeholder="Service Name"
+                />
+                <input
+                  id="service-input"
+                  type="number"
+                  placeholder="Service Price"
+                />
+              </div>
+              <input
+                id="service-input"
+                type="text"
+                placeholder="Service Short Description"
+              />{" "}
+              <br />
+              <textarea
+                id="service-input"
+                type="text"
+                placeholder="Service Long Description"
+              />{" "}
+              <br />
+              <label>Upload your file</label>
+              <br />
+              <div class="file-input">
+                <input id="service-input" type="file" class="real-input" />
+                <div class="button">
+                  Choose File <span>or drop file</span>
+                </div>
+              </div>
+              <button className="Add-Service-btn">Submit</button>
+            </form>
           </div>
         </div>
       )}
