@@ -1,6 +1,7 @@
 import React from 'react'
 import AdminSidebar from "../../components/admin/Dashboard/sidebar";
 import SearchBar from '../../components/admin/Goals/SearchBar'
+import GoalsCard from '../../components/admin/Goals/goalsCard';
 
 function goals() {
   return (
@@ -21,6 +22,7 @@ function goals() {
         }}
       >
         <SearchBar />
+        <GoalsCard />
       </div>
     </div>
   )
