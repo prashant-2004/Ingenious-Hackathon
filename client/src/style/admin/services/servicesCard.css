@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: start;
   margin: 0 auto;
+  gap: 3rem;
 }
 
 .services-Card {
@@ -11,6 +12,23 @@
   background: #fff;
 
   width: 25rem;
-  height: 30rem;
+  height: 31.5rem;
   flex-shrink: 0;
+}
+
+.services-Card img {
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.services-info {
+  padding: 3%;
+}
+
+.service-price-and-other-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -18,7 +18,7 @@ function services() {
           marginLeft: "12.5%",
           width: "100%",
           height: "100%",
-          padding: "0% 3%",
+          padding: "0% 4%",
         }}
       >
         <SearchBar />
