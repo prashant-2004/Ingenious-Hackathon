@@ -17,9 +17,9 @@ function servicesCard() {
           </p>
           <hr />
           <div className="service-price-and-other-info">
-            <h5>$48</h5>
-            <h5>100 Appoiments</h5>
-            <h5>4.2 Stars</h5>
+            <h6>$48</h6>
+            <h6>100 Appoiments</h6>
+            <h6>4.2 Stars</h6>
           </div>
         </div>
       </div>
