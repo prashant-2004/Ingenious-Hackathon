@@ -183,3 +183,34 @@
   background-color: white;
   color: #3788e5;
 }
+
+
+.Add-New-goal-btn {
+  color: var(--White, #fefefe);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+
+  border-radius: 0.5rem;
+  border: 1px solid #3788e5;
+  background: var(--Primary-Primary-500, #3788e5);
+
+  display: flex;
+  height: 100%;
+  width: 6rem;
+  padding: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2%;
+  margin-bottom: 3%;
+  
+  position: relative;
+  left: 88.5%;
+}
+
+.Add-New-goal-btn:hover {
+  border: 1px solid #3788e5;
+  background-color: white;
+  color: #3788e5;
+}
