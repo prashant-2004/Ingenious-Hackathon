@@ -1,0 +1,40 @@
+.PopularProjects {
+    padding: 3% 16%;
+}
+
+.PopularProjects h3{
+    font-weight: 700;
+    color: #0a2b14;
+}
+
+.Popular-Projects-Cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1 0 30%; 
+    max-width: 30%; 
+}
+
+.Project-Card {
+    width: 20rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    margin-top: 3%;
+}
+
+.Project-img {
+    width: 100%;
+}
+
+.Project-info {
+    padding: 3%;
+    text-align: center;
+    background-color: #f5f7f6;
+}

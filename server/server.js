@@ -16,9 +16,8 @@ app.use(cookieParser());
 // Rout Link
 app.use(require('./route/adminRoute'));
 app.use(require('./route/userRoute'));
-app.get("/mail", sendMail);
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 
 app.listen(PORT, () => {

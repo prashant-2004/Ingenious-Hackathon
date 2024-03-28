@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../../style/user/home/header.css";
-import graph1 from "../../../assets/user/graph1.png";
-import graph2 from "../../../assets/user/graph2.png";
 
 function header() {
   return (
@@ -214,8 +212,8 @@ function header() {
         </Link>
       </div>
 
-      <img className="graph1" src={graph1} alt="graph1"/>
-      <img className="graph2" src={graph1} alt="graph1"/>
+      <div className="scroll-down-arrow"></div>
+      <div className="scroll-down-arrow-2"></div>
     </div>
   );
 }
