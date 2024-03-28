@@ -1,7 +1,4 @@
-body {
-    overflow: hidden;
-    overflow-x: hidden !important;
-}
+
 
 .header {
     display: flex;

@@ -1,9 +1,15 @@
+.goalsCards {
+    display: flex;
+    flex-direction: column;
+}
+
 .goalsCard {
   border-radius: 18.472px;
   border: 0.924px solid var(--Stroke-Color, #a7a7a7);
   background: #fff;
   width: 100%;
   padding: 2%;
+  margin-bottom: 3rem;
 }
 
 .task-to-do {

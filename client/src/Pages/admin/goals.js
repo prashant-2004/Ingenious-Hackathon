@@ -9,7 +9,7 @@ function goals() {
       style={{
         display: "flex",
         background: "var(--Surface, #F2F5FA)",
-        height: "100vh",
+        minHeight: "100vh",
       }}
     >
       <AdminSidebar />
@@ -19,6 +19,7 @@ function goals() {
           width: "100%",
           height: "100%",
           padding: "0% 4%",
+          paddingRight: "2%"
         }}
       >
         <SearchBar />

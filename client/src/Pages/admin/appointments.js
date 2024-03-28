@@ -8,7 +8,7 @@ function appointments() {
       style={{
         display: "flex",
         background: "var(--Surface, #F2F5FA)",
-        height: "100vh",
+        minHeight: "100vh",
       }}
     >
       <AdminSidebar />

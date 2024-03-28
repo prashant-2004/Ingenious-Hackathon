@@ -6,7 +6,7 @@ import ScheduleAppointment from "../../components/admin/Dashboard/ScheduleAppoin
 
 function dashboard() {
   return (
-    <div style={{display: "flex", background: "var(--Surface, #F2F5FA)", height: "100vh"}}>
+    <div style={{display: "flex", background: "var(--Surface, #F2F5FA)", minHeight: "100vh"}}>
       <AdminSidebar />
       <div style={{marginLeft: "16%", padding: "2rem 1rem"}}>
         <AdminCards />
