@@ -2,17 +2,28 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav } from "react-bootstrap";
 import "../../style/user/navbar.css";
+import { NavLink } from "react-router-dom";
 
 function NavbarComponent() {
   return (
     <Navbar className="custom-navbar" expand="lg">
-      <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+      <Navbar.Brand>
+        <NavLink className="nav-brand" to={"/"}>
+          SkillStack
+        </NavLink>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto custom-nav-links">
-          <Nav.Link href="#home" id="nav-link-1">Services</Nav.Link>
-          <Nav.Link href="#link">Signup / Login</Nav.Link>
-          <Nav.Link href="#contact" id="become-tasker">Become a Tasker</Nav.Link>
+          <NavLink to={"/"} className="nav-link" id="nav-link-1">
+            Services
+          </NavLink>
+          <NavLink to={"/login"} className="nav-link">
+            Signup / Login
+          </NavLink>
+          <NavLink to={"/"} className="nav-link" id="become-tasker">
+            Become a Tasker
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
