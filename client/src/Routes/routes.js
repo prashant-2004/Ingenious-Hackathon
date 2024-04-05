@@ -10,6 +10,7 @@ import Goals from "../Pages/admin/goals";
 
 import UserLogin from "../Pages/users/login";
 import UserSignup from "../Pages/users/signup";
+import UserServices from "../Pages/users/services";
 
 function Routess() {
   return (
@@ -24,6 +25,7 @@ function Routess() {
 
       <Route path="/Signin" element={<UserLogin />} />
       <Route path="/signup" element={<UserSignup />} />
+      <Route path="/services" element={<UserServices />} />
     </Routes>
   );
 }

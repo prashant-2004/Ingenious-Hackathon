@@ -1,0 +1,36 @@
+.AllServices {
+  padding: 3% 13%;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  background-color: white;
+}
+
+.tab {
+  padding: 12px 20px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+  border-bottom: 1px solid #000000;
+}
+
+.tab.active {
+  background-color: #fff;
+  border-bottom: 1px solid #000000;
+}
+
+.tab-content {
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #f5f7f6;
+  margin: 0 -18%;
+  padding: 3% 18%;
+}

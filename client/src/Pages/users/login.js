@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import NavbarComponent from "../../components/users/navbar";
 import "../../style/user/login.css";
 
 function Login() {
@@ -41,6 +42,8 @@ function Login() {
   };
 
   return (
+    <>
+    <NavbarComponent />
     <div className="user-login">
       <div className="user-login-form">
         <h1 className="login-title">SkillStack</h1>
@@ -88,6 +91,7 @@ function Login() {
         </form>
       </div>
     </div>
+    </>
   );
 }
 
