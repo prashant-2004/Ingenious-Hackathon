@@ -75,7 +75,7 @@
     stroke: #0d7a5f;
 }
 
-.scroll-down-arrow {
+/* .scroll-down-arrow {
     width: 2em;
     height: 2em;
     background-color: transparent;
@@ -120,5 +120,5 @@
       transform: translateY(20%) rotate(45deg);
       opacity: 0.7;
     }
-  }
+  } */
   

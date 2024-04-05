@@ -1,0 +1,43 @@
+.custom-navbar {
+  background-color: white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  padding: 0.5% 13%;
+}
+
+.custom-nav-links {
+  margin-left: auto;
+  width: 29rem;
+}
+
+.nav-link.active {
+    background-color: transparent !important;
+}
+
+.custom-nav-links .nav-link {
+  color: black;
+  font-weight: 600;
+  border: none;
+}
+
+.custom-nav-links .nav-link:hover {
+  color: #0d7a5f;
+  background-color: transparent;
+}
+
+#nav-link-1 {
+  margin-right: -5% !important;
+}
+
+#become-tasker{
+    border: #0d7a5f 1px solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d7a5f;
+}
+
+#become-tasker:hover{
+    background-color: #0d7a5f !important;
+    color: white;
+}

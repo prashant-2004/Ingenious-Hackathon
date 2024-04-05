@@ -212,8 +212,8 @@ function header() {
         </Link>
       </div>
 
-      <div className="scroll-down-arrow"></div>
-      <div className="scroll-down-arrow-2"></div>
+      {/* <div className="scroll-down-arrow"></div>
+      <div className="scroll-down-arrow-2"></div> */}
     </div>
   );
 }
