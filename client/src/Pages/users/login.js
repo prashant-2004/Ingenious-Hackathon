@@ -44,50 +44,48 @@ function Login() {
     <div className="user-login">
       <div className="user-login-form">
         <h1 className="login-title">SkillStack</h1>
-        <div className="login-container">
-          <form method="POST">
-            <div className="form-group mb-3">
-              <label className="login-input-text" htmlFor="exampleInputEmail1">
-                Email address
-              </label>
-              <input
-                type="email"
-                className="form-control-input"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label
-                className="login-input-text"
-                htmlFor="exampleInputPassword1"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                className="form-control-input"
-                id="exampleInputPassword1"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+        <form method="POST">
+          <div className="form-group mb-3">
+            <label className="login-input-text" htmlFor="exampleInputEmail1">
+              Email address
+            </label>
+            <input
+              type="email"
+              className="form-control-input"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label className="login-input-text" htmlFor="exampleInputPassword1">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control-input"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-            <div className="text-center">
-              <button onClick={loginUser} type="submit" className="login-btn">
-                Login
-              </button>
-            </div>
+          <div className="text-center">
+            <button onClick={loginUser} type="submit" className="login-btn">
+              Login
+            </button>
+          </div>
 
-            <div className="text-center mt-3 signup-page-link">
-              Don't have an account? <NavLink className={"NavLink"} to={"/signup"}>Sign Up</NavLink>
-            </div>
-          </form>
-        </div>
+          <div className="text-center mt-3 signup-page-link">
+            Don't have an account?{" "}
+            <NavLink className={"NavLink"} to={"/signup"}>
+              Sign Up
+            </NavLink>
+          </div>
+        </form>
       </div>
     </div>
   );

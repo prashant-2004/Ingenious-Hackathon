@@ -22,7 +22,7 @@ function Routess() {
       <Route path="/admin-services" element={<Services />} />
       <Route path="/admin-goals" element={<Goals />} />
 
-      <Route path="/login" element={<UserLogin />} />
+      <Route path="/Signin" element={<UserLogin />} />
       <Route path="/signup" element={<UserSignup />} />
     </Routes>
   );

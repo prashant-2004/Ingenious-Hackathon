@@ -15,11 +15,11 @@ function NavbarComponent() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto custom-nav-links">
-          <NavLink to={"/"} className="nav-link" id="nav-link-1">
+          <NavLink to={"/services"} className="nav-link" id="nav-link-1">
             Services
           </NavLink>
-          <NavLink to={"/login"} className="nav-link">
-            Signup / Login
+          <NavLink to={"/Signin"} className="nav-link">
+            Signup / Signin
           </NavLink>
           <NavLink to={"/admin-login"} className="nav-link" id="become-tasker">
             Become a Tasker
