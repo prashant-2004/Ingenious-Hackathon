@@ -1,0 +1,36 @@
+.info-container{
+    background-color: white;
+    color: black;
+    margin: 4%;
+    padding: 4%;
+}
+
+.sub-head-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     column-gap: 9%;
+}
+h4{
+    font-weight: 600;
+}
+.info-head-container
+{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 4%;
+}
+.guaranteed{
+    color: #0d7a5f;
+}
+
+.sub-head-container p{
+    font-size: 1.2rem;
+}
+
+.mark-image1{
+    margin-top: 6%;
+}
