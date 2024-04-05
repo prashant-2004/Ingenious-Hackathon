@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../../style/user/services/AllServices.css";
-
+import  Appoinmentform from'../services/Appoinmentform'
 function AllServices() {
   const [activeTab, setActiveTab] = useState("tab1");
 
@@ -9,6 +9,7 @@ function AllServices() {
   };
 
   return (
+    <>
     <div className="AllServices">
       <div className="tab-container">
         <div
@@ -36,6 +37,8 @@ function AllServices() {
         {activeTab === "tab3" && <div>Content for Tab 3</div>}
       </div>
     </div>
+    <Appoinmentform />
+    </>
   );
 }
 
