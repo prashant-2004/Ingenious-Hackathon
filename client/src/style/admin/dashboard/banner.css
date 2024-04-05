@@ -1,114 +1,127 @@
-.banner-container
-{
-display: flex;
-width: 100vw;
-height: 100vh;
-justify-content: center;
-align-items: center;
-background-color: #fffce4;
-font-family: var(--next-font-inter, "Inter"),Helvetica,sans-serif;
+
+*{
+  margin: 0;
 }
-.card1{
-    background-color:white;
-    position: absolute;
-    top: 20%;
-    left: 15%;
-    width: 22rem;
-    height: 25rem;
+.banner-container
+  {
+
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffce4;
+  font-family: var(--next-font-inter, "Inter"),Helvetica,sans-serif;
+  }
+  .banner{
+    margin-left: -8rem;
+  } 
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .card1 {
+    background-color: white;
+    position: relative;
+    top: 2%;
+    left: 5%; 
+    width: 25%; /* Adjust as needed */
+    height: 60vh; /* Adjust as needed */
     z-index: 1;
     border-radius: 1rem;
-}
-.subhead{
+  }
+  
+  .subhead {
     display: flex;
     word-wrap: break-word;
-    
-}
-.srno{
-    margin-top: 4rem;
-    margin-left: 1rem;
-    width: 2.5rem;
-    height: 2.5rem;
+  }
+  
+  .srno {
+    margin-top: 7%;
+    margin-left: 4%; /* Adjust as needed */
+    width: 14%;
+    height: 4vw; /* Adjust as needed */
     background-color: #d7d7fd;
     border-radius: 50%;
-   text-align: center;
-   align-content: center;
-   font-size: larger;
-   font-weight: bold;
-}
-.subword{
-  position: absolute;
-  top: 22%;
-  left: 23%;
-  word-wrap: break-word;
-  font-size: 17px;
-  font-weight: 400;
-}
-
-.head{
+    text-align: center;
+    align-content: center;
+    font-size: 2vw; /* Adjust as needed */
+    font-weight: bold;
+  }
   
-position: relative;
-top: 2rem;
-left: 2rem;
-font-size: 20px;
-font-weight: bold;
-}
-
-.srno2{
-    margin-top: 10rem;
-    margin-left: -2.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: #fffce4;
+  .subword {
+    position: absolute;
+    top: 22%; /* Adjust as needed */
+    left: 23%; /* Adjust as needed */
+    word-wrap: break-word;
+    font-size: 1.5vw; /* Adjust as needed */
+    font-weight: 400;
+  }
+  
+  .head {
+    position: relative;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.5vw; /* Adjust as needed */
+    font-weight: bold;
+  }
+  
+  .srno2 {
+    margin-top: 34%;
+    margin-left: -14%; /* Adjust as needed */
+    width: 14%;
+    height: 4vw; /* Adjust as needed */
+    background-color:  #fffce4;
     border-radius: 50%;
-   text-align: center;
-   align-content: center;
-   font-size: larger;
-   font-weight: bold;
-}
-.subword2{
-  position: absolute;
-  top: 46%;
-  left: 23%;
-  word-wrap: break-word;
-  font-size: 17px;
-  font-weight: 400;
-}
-
-.srno3{
-    margin-top: 16rem;
-    margin-left: -2.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: #e3ffef;
+    text-align: center;
+    align-content: center;
+    font-size: 2vw; /* Adjust as needed */
+    font-weight: bold;
+  }
+  
+  .subword2 {
+    position: absolute;
+    top: 46%; /* Adjust as needed */
+    left: 23%; /* Adjust as needed */
+    word-wrap: break-word;
+    font-size: 1.5vw; /* Adjust as needed */
+    font-weight: 400;
+  }
+  
+  .srno3 {
+    margin-top: 65%;
+    margin-left: -14%; /* Adjust as needed */
+    width: 14%;
+    height: 4vw; /* Adjust as needed */
+    background-color: #ab8f74;
     border-radius: 50%;
-   text-align: center;
-   align-content: center;
-   font-size: larger;
-   font-weight: bold;
-}
-.subword3{
-  position: absolute;
-  top: 70%;
-  left: 23%;
-  word-wrap: break-word;
-  font-size: 17px;
-  font-weight: 400;
-}
-
-
-.section-container{
-background-color: aqua;
-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
- 
-
-}
-
-.subtextcontain{
-    background-color:white;
+    text-align: center;
+    align-content: center;
+    font-size: 2vw; /* Adjust as needed */
+    font-weight: bold;
+  }
+  
+  .subword3 {
+    position: absolute;
+    top: 70%; /* Adjust as needed */
+    left: 23%; /* Adjust as needed */
+    word-wrap: break-word;
+    font-size: 1.5vw; /* Adjust as needed */
+    font-weight: 400;
+  }
+  
+  .section-container {
+    background-color: aqua;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .subtextcontain {
+    background-color: white;
     width: fit-content;
-display: flex;
-
-}
+    display: flex;
+  }
+  
