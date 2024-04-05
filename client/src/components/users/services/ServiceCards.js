@@ -12,7 +12,12 @@ function ServiceCards() {
         <div style={{ padding: "2% 5%" }}>
           <div className="service-card-content">
             <h3>Service Title</h3>
-            <p>Service Description Service Description Service Description Service Description Service Description Service Description Service Description Service Description Service Description Service Description</p>
+            <p>
+              Service Description Service Description Service Description
+              Service Description Service Description Service Description
+              Service Description Service Description Service Description
+              Service Description
+            </p>
           </div>
           <div className="service-price-content">
             <h3>30$/hr</h3>
