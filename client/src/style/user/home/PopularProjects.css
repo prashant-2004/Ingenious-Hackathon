@@ -14,10 +14,11 @@
   }
 
 .Project-Card {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-    border-bottom-left-radius: 35px;
-    border-bottom-right-radius: 35px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     margin-top: 3%;
+    overflow: hidden;
 }
 
 .Project-img {
@@ -25,7 +26,20 @@
 }
 
 .Project-info {
-    padding: 3%;
+    padding: 10%;
+    padding-bottom: 5%;
     text-align: center;
     background-color: #f5f7f6;
+}
+
+
+.Project-info h5 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #0a2b14;
+}
+
+.Project-info p {
+    font-size: 0.9rem;
+    color: #0a2b14;
 }

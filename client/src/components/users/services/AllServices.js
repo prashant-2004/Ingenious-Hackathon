@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../../style/user/services/AllServices.css";
+import ServiceCards from "./ServiceCards";
 
 function AllServices() {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -31,7 +32,7 @@ function AllServices() {
         </div>
       </div>
       <div className="tab-content">
-        {activeTab === "tab1" && <div>Content for Tab 1</div>}
+        {activeTab === "tab1" && <div><ServiceCards /></div>}
         {activeTab === "tab2" && <div>Content for Tab 2</div>}
         {activeTab === "tab3" && <div>Content for Tab 3</div>}
       </div>
