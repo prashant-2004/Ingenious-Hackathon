@@ -21,7 +21,7 @@ function NavbarComponent() {
           <NavLink to={"/login"} className="nav-link">
             Signup / Login
           </NavLink>
-          <NavLink to={"/"} className="nav-link" id="become-tasker">
+          <NavLink to={"/admin-login"} className="nav-link" id="become-tasker">
             Become a Tasker
           </NavLink>
         </Nav>

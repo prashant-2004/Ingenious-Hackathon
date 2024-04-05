@@ -15,9 +15,10 @@
   width: 29rem;
 }
 
-.nav-link.active {
-  background-color: transparent !important;
-}
+.custom-nav-links .nav-link.active {
+    color: #0d7a5f;
+    background-color: transparent;
+  }
 
 .custom-nav-links .nav-link {
   color: black;
