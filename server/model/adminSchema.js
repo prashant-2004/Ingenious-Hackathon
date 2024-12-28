@@ -45,7 +45,7 @@ adminSchema.pre("save", async function (next) {
 // Toakan generating
 adminSchema.methods.generateAuthToken = async function () {
   try {
-    let tokan = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
+    let tokan = jwt.sign({ _id: this._id }, process.env.SECRET_KEY || 'THISISSECRETKEY');
     this.tokans = this.tokans.concat({ tokan: tokan });
     await this.save();
     return tokan;
